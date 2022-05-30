@@ -10,14 +10,20 @@ import UIKit
 class SecondViewController: UIViewController {
 
     @IBOutlet weak var amountField: UITextField!
+    public var completionHandler: ((String?)-> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
 
  
     @IBAction func confirmButtonClicked(_ sender: Any) {
+        completionHandler?(amountField.text)
+        
+        dismiss(animated: true, completion: nil)
+    
+    
     }
     
 }
